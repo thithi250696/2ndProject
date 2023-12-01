@@ -28,7 +28,7 @@
 - 아래에 코드 입니다.
   ### 상품명, 상품값 데이터 수집 🌼
   #### library import
-from selenium import webdriver as wb
+from selenium import webdriver as wb <br>
 from bs4 import BeautifulSoup as bs
 import requests as req
 import os
