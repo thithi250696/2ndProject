@@ -1,32 +1,24 @@
 # :pushpin: TOYCONN
->동네기반 중고 장난감 대여 서비스
+>동네기반 중고 장난감 대여 서비스 </br>
 > 데모사이트 링크: http://localhost:8081/ToyConn_pro/main.jsp
 
 </br>
 
 ## 1. 제작 기간 & 참여 인원
-- 2019년 2월 18일 ~ 4월 5일
-- 개인 프로젝트
+- 2023년 11월 14일 ~ 11월 30일
+- 팀 프로젝트
 
 </br>
 
 ## 2. 사용 기술
-#### `Back-end`
-  - Java 8
-  - Spring Boot 2.3
-  - Gradle
-  - Spring Data JPA
-  - QueryDSL
-  - H2
-  - MySQL 5.7
-  - Spring Security
-  - Jsoup
-#### `Front-end`
-  - Vue.js 3.0
-  - Element UI
-
+#### `DB 및 Crawling`
+  - MySQL Oracle 11
+  - Python
+  - Selenium
+  - BeautifulSoup
 </br>
-
+#### `back-end`
+  - 
 ## 3. ERD 설계
 ![](https://zuminternet.github.io/images/portal/post/2019-04-22-ZUM-Pilot-integer/final_erd.png)
 ![](https://github.com/JungHyung2/gitio.io/blob/master/assets/images/portfolio/p1.jpg)
