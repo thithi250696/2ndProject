@@ -18,16 +18,14 @@
   - BeautifulSoup
 </br>
 
-## 3. ERD 설계
+## 3. ERD - DB 테이블 설계
 <img src = "https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/blob/main/ToyConn_pro/src/main/webapp/images/erd.png">
 
 
 ## 4. 핵심 기능
+- 중고장난감: 중고사이트에 쿨롤링 -> 데이터 수집 -> excel파알으로 수출 -> 데이터 처리 -> oracle데이터배이스 SQL문 활용하고 저장
+- 프리미엄
 
 
-### 4.1. 전체 흐름
-
-
-### 4.2. 사용자 요청
 
 
