@@ -1,16 +1,16 @@
-# :pushpin: TOYCONN
+# :pushpin: TOYCONN 🚗🚓🛴🏍
 >동네기반 중고 장난감 대여 서비스 </br>
 > 데모사이트 링크: http://localhost:8081/ToyConn_pro/main.jsp
 
 </br>
 
-## 1. 제작 기간 & 참여 인원
+## 1. 제작 기간 & 참여 인원❤
 - 2023년 11월 14일 ~ 11월 30일
 - 팀 프로젝트
 
 </br>
 
-## 2. 사용 기술
+## 2. 사용 기술❤
 #### `DB 및 Crawling`
   - MySQL Oracle 11
   - Python
@@ -18,11 +18,12 @@
   - BeautifulSoup
 </br>
 
-## 3. ERD - DB 테이블 설계
+## 3. ERD - DB 테이블 설계 ❤
 <img src = "https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/blob/main/ToyConn_pro/src/main/webapp/images/erd.png">
 
 
-## 4. 핵심 기능
+## 4. 핵심 기능 ❤
+  ## 4.1 Web Crawling 데이터 수집
 - 중고장난감: 중고사이트에 쿨롤링 -> 데이터 수집 -> excel파알으로 수출 -> 데이터 처리 -> oracle데이터배이스 SQL문 활용하고 저장<br>
   참조사이트: 당근마켓, 중고나라, 스마트네이버스토어
   <img src ="https://github.com/thithi250696/thi/blob/main/carrot.PNG">
@@ -96,6 +97,6 @@ data = pd.DataFrame(data = zip(range(1,100),details),columns = [no','detail'])
 #### export파일
 data.to_excel('당근_장난감_detail23.11.13.03.xlsx',index = False)
     
-
+## 4.2 Oracle Database 관리
 
 
