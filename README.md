@@ -1,6 +1,6 @@
-# :pushpin: goQuality
->고퀄리티 개발 컨텐츠 공유 서비스  
-> 데모사이트 링크
+# :pushpin: TOYCONN
+>동네기반 중고 장난감 대여 서비스
+> 데모사이트 링크: http://localhost:8081/ToyConn_pro/main.jsp
 
 </br>
 
