@@ -17,8 +17,7 @@
   - Selenium
   - BeautifulSoup
 </br>
-#### `back-end`
-  - 
+
 ## 3. ERD 설계
 <img src = "https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/blob/main/ToyConn_pro/src/main/webapp/images/erd.png">
 
