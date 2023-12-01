@@ -29,48 +29,47 @@
   ### 상품명, 상품값 데이터 수집 🌼
   #### library import
 from selenium import webdriver as wb <br>
-from bs4 import BeautifulSoup as bs
-import requests as req
-import os
-import pandas as pd
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-import time
-from urllib.request import urlretrieve 
+from bs4 import BeautifulSoup as bs<br>
+import requests as req<br>
+import os<br>
+import pandas as pd<br>
+from selenium.webdriver.common.keys import Keys<br>
+from selenium.webdriver.common.by import By<br>
+import time<br>
+from urllib.request import urlretrieve <br>
 #### get url
-url = "https://www.daangn.com/search/%EC%9E%A5%EB%82%9C%EA%B0%90/"
-head_option = {
-'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'}
-res= req.get(url, headers = head_option)
-html = bs(res.text,'html')
+url = "https://www.daangn.com/search/%EC%9E%A5%EB%82%9C%EA%B0%90/"<br>
+head_option = {<br>
+'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'}<br>
+res= req.get(url, headers = head_option)<br>
+html = bs(res.text,'html')<br>
 #### run driver
-driver = wb.Chrome();
-driver.get(url);
+driver = wb.Chrome();<br>
+driver.get(url);<br>
 #### 전체 파이지 화면 보기
-last_height = driver.execute_script("return document.body.scrollWidth")
-while(True):
-    body = driver.find_element(By.TAG_NAME,'body')
-    body.send_keys(Keys.END)
-    time.sleep(1)
-    current_height=driver.execute_script("return document.body.scrollWidth")
-    #3. 페이지 높이에 변화가 없다면 반복문 빠져나오기
-    if current_height == last_height:
-        break
-    last_height = current_height
-    print(last_height, current_height)
-### 상품명, 상품값 데이터 수집
-names = []
-prices = []
-length = len(driver.find_elements(By.CLASS_NAME,"article-title"))
-for i in range (length):
-    name = driver.find_elements(By.CLASS_NAME, "article-title")[i].text
-    price = driver.find_elements(By.CLASS_NAME, "article-price")[i].text
-    names.append(name)
-    prices.append(price)
-#### 데이터 프레임 넣기
-data = pd.DataFrame(data = zip(names,prices),columns = ['Items','Price'])
-#### export파일
-data.to_excel('당근_장난감23.11.13.03.xlsx',index = False)
+last_height = driver.execute_script("return document.body.scrollWidth")<br>
+while(True):<br>
+    body = driver.find_element(By.TAG_NAME,'body')<br>
+    body.send_keys(Keys.END)<br>
+    time.sleep(1)<br>
+    current_height=driver.execute_script("return document.body.scrollWidth")<br>
+    if current_height == last_height:<br>
+        break<br>
+    last_height = current_height<br>
+    print(last_height, current_height)<br>
+### 상품명, 상품값 데이터 수집<br>
+names = []<br>
+prices = []<br>
+length = len(driver.find_elements(By.CLASS_NAME,"article-title"))<br>
+for i in range (length):<br>
+    name = driver.find_elements(By.CLASS_NAME, "article-title")[i].text<br>
+    price = driver.find_elements(By.CLASS_NAME, "article-price")[i].text<br>
+    names.append(name)<br>
+    prices.append(price)<br>
+#### 데이터 프레임 넣기<br>
+data = pd.DataFrame(data = zip(names,prices),columns = ['Items','Price'])<br>
+#### export파일<br>
+data.to_excel('당근_장난감23.11.13.03.xlsx',index = False)<br>
 ### 이미지 수집 ☘
 imgs = driver.find_elements(By.CSS_SELECTOR,'div.card-photo>img')
 data = []
@@ -84,11 +83,11 @@ for i in range(len(driver.find_elements(By.CSS_SELECTOR,'a.flea-market-article-l
 detail_link
 #### 상품펴현 수집
 details =[]
-for i in range(len(detail_link)):
-    driver = wb.Chrome()
-    driver.get(detail_link[i])
-    detail = driver.find_element(By.CSS_SELECTOR,'div#article-detail').text.strip('\n')
-    details.append(detail)
+for i in range(len(detail_link)):<br>
+    driver = wb.Chrome()<br>
+    driver.get(detail_link[i])<br>
+    detail = driver.find_element(By.CSS_SELECTOR,'div#article-detail').text.strip('\n')<br>
+    details.append(detail)<br>
 
 #### 데이터 프레임 넣기
 data = pd.DataFrame(data = zip(range(1,100),details),columns = [no','detail'])
